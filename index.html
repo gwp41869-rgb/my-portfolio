@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>John Paul Soriano | Portfolio</title>
+    <title>Jian Nuel S. Claveria | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -69,37 +69,37 @@
     </style>
 </head>
 
-<body class="bg-gray-50 antialiased" x-data="{ section: 'home', mobileMenuOpen: false }">
+<body class="bg-gray-300 antialiased" x-data="{ section: 'home', mobileMenuOpen: false }">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <nav class="fixed w-full bg-blue-600 text-white shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-gray-900">JP Soriano</h1>
+                    <h1 class="text-xl font-bold text-white">Jian Claveria</h1>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
                     <button @click="section = 'home'"
-                        :class="section === 'home' ? 'text-primary-500 font-semibold' : 'text-gray-600 hover:text-gray-900'"
+                        :class="section === 'home' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
                         class="transition-colors">Home</button>
                     <button @click="section = 'about'"
-                        :class="section === 'about' ? 'text-primary-500 font-semibold' : 'text-gray-600 hover:text-gray-900'"
+                        :class="section === 'about' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
                         class="transition-colors">About</button>
                     <button @click="section = 'projects'"
-                        :class="section === 'projects' ? 'text-primary-500 font-semibold' : 'text-gray-600 hover:text-gray-900'"
+                        :class="section === 'projects' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
                         class="transition-colors">Projects</button>
                     <button @click="section = 'education'"
-                        :class="section === 'education' ? 'text-primary-500 font-semibold' : 'text-gray-600 hover:text-gray-900'"
+                        :class="section === 'education' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
                         class="transition-colors">Education</button>
                     <button @click="section = 'contact'"
-                        :class="section === 'contact' ? 'text-primary-500 font-semibold' : 'text-gray-600 hover:text-gray-900'"
+                        :class="section === 'contact' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
                         class="transition-colors">Contact</button>
                 </div>
 
                 <div class="hidden md:block">
-                    <a href="files/jpsoriano-cv.pdf" target="_blank"
+                    <a href="files/Jian_Nuel_Claveria_Resume.pdf" target="_blank"
                         class="bg-primary-500 text-white px-6 py-2 rounded-lg hover:bg-primary-600 transition-colors">Resume</a>
                 </div>
 
@@ -126,8 +126,8 @@
                     class="block w-full text-left py-2 text-gray-600 hover:text-primary-500">Education</button>
                 <button @click="section = 'contact'; mobileMenuOpen = false"
                     class="block w-full text-left py-2 text-gray-600 hover:text-primary-500">Contact</button>
-                <a href="files/jpsoriano-cv.pdf" target="_blank"
-                    class="block bg-primary-500 text-white px-6 py-2 rounded-lg text-center">Resume</a>
+                <a href="files/Jian_Nuel_Claveria_Resume.pdf" target="_blank"
+                    class="block bg-white text-blue-600 px-6 py-2 rounded-lg text-center font-medium hover:bg-blue-50 transition-colors">Resume</a>
             </div>
         </div>
     </nav>
@@ -136,14 +136,14 @@
     <main class="pt-16">
 
         <!-- Home Section -->
-        <section x-show="section === 'home'" x-transition class="h-screen flex">
+        <section x-show="section === 'home'" x-transition class="h-screen flex bg-gray-200">
             <div class="w-full md:w-1/2 flex items-center px-4 sm:px-6 lg:px-16">
                 <div class="max-w-2xl">
                     <p class="text-xl md:text-2xl text-primary-500 font-semibold mb-4">Hello, I'm</p>
-                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">John Paul Soriano</h1>
-                    <p class="text-2xl text-gray-600 mb-6">Software Developer · IT Educator · Tech Support</p>
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Jian Nuel S. Claveria</h1>
+                    <p class="text-2xl text-gray-600 mb-6">Student</p>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Building scalable systems and shaping the future of technology education.
+                        A student passionate about technology, web development, and learning how systems work behind the scenes.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <button @click="section = 'projects'"
@@ -156,174 +156,66 @@
                 </div>
             </div>
             <div class="hidden md:block md:w-1/2 h-full relative overflow-hidden">
-                <img src="images/photo.png" alt="John Paul Soriano" class="absolute inset-0 w-full h-full object-cover">
+                <img src="images/photo.png" alt="Jian Nuel S. Claveria" class="absolute inset-0 w-full h-full object-cover">
             </div>
         </section>
 
         <!-- About Section -->
-        <section x-show="section === 'about'" x-transition class="min-h-screen flex items-center">
+        <section x-show="section === 'about'" x-transition class="min-h-screen flex items-center bg-gray-200 py-12">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <h2 class="text-4xl font-bold text-gray-900 mb-8">About Me</h2>
                 <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
                     <p>
-                        I'm a <span class="font-semibold text-primary-500">Full-Stack Web Developer</span>, Tech
-                        Support,
-                        and IT Educator with a passion for building scalable systems and intuitive applications.
+                        I'm a student passionate about <span class="font-semibold text-primary-500">technology, web development, and learning how systems work behind the scenes</span>.
                     </p>
                     <p>
-                        Currently serving as a professor and MIS staff at <span class="font-semibold">Universidad de
-                            Dagupan</span>, I lead development projects that serve over <span
-                            class="font-bold text-primary-500">15,000+ users</span>.
+                        I'm currently exploring different areas of IT—such as web development, tech support, and system management—as I continue to build my skills and work on personal and academic projects.
                     </p>
                     <p>
-                        My work bridges the gap between complex backend logic and user-friendly frontend experiences,
-                        ensuring that technology serves people effectively.
+                        I enjoy creating simple, user-friendly applications and improving my knowledge of both frontend and backend development. My goal is to keep growing, experimenting, and eventually contribute to real-world projects that make a meaningful impact.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6 mt-12">
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">💻</div>
                         <h3 class="font-semibold text-gray-900 mb-2">Development</h3>
-                        <p class="text-gray-600 text-sm">Full-stack web & mobile development using modern frameworks</p>
+                        <p class="text-gray-600 text-sm">Learning full-stack web and mobile development using modern tools and frameworks</p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">📚</div>
                         <h3 class="font-semibold text-gray-900 mb-2">Education</h3>
-                        <p class="text-gray-600 text-sm">Teaching and mentoring the next generation of IT professionals
-                        </p>
+                        <p class="text-gray-600 text-sm">Continuously studying and improving my IT skills through projects, research, and hands-on practice</p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">🛠️</div>
                         <h3 class="font-semibold text-gray-900 mb-2">Tech Support</h3>
-                        <p class="text-gray-600 text-sm">Providing technical solutions and system maintenance</p>
+                        <p class="text-gray-600 text-sm">Gaining experience in troubleshooting, basic system maintenance, and helping others with technical issues</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section x-show="section === 'projects'" x-transition class="min-h-screen py-20">
+        <section x-show="section === 'projects'" x-transition class="min-h-screen py-20 bg-gray-200">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-gray-900 mb-12">Projects</h2>
 
                 <div class="space-y-8">
-                    <!-- Project 1 -->
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
+                    <div class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 card-hover">
                         <div class="flex justify-between items-start mb-4">
                             <div>
-                                <h3 class="text-2xl font-bold text-gray-900 mb-2">STEP LMS</h3>
-                                <p class="text-primary-500 text-sm font-medium">Learning Management System</p>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">UDD Eventure</h3>
+                                <p class="text-primary-500 text-sm font-medium">Event Management Platform</p>
                             </div>
                             <span
                                 class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Active</span>
                         </div>
                         <p class="text-gray-600 mb-6">
-                            Custom LMS used by 15,000+ Students of Universidad de Dagupan. Features real-time grades,
-                            enrollment, and course materials.
+                            An event management platform for organizing and managing university events.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <a href="http://udd.steps.com.ph/login" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
-                                    </path>
-                                </svg>
-                                Web
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.arzatech.step&hl=en"
-                                target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
-                                </svg>
-                                Android
-                            </a>
-                            <a href="https://apps.apple.com/ph/app/step-s/id6469019994" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                                </svg>
-                                iOS
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">UdD Student Portal</h3>
-                        <p class="text-primary-500 text-sm font-medium mb-4">Academic Services Portal</p>
-                        <p class="text-gray-600 mb-6">
-                            Centralized access to Academic Services for students of Universidad de Dagupan.
-                        </p>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="https://portal.udd.edu.ph" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
-                                    </path>
-                                </svg>
-                                Web
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.arzatech.myuddportal&hl=en"
-                                target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
-                                </svg>
-                                Android
-                            </a>
-                            <a href="https://apps.apple.com/ph/app/myuddportal/id6747736747" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                                </svg>
-                                iOS
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">ISUdD Attendance Monitoring</h3>
-                        <p class="text-gray-600 mb-6">
-                            An Attendance Monitoring App for Parents to Track Their Child's Attendance at ISUdD.
-                        </p>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="https://play.google.com/store/apps/details?id=com.arzatech.isuddattendance&hl=en"
-                                target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
-                                </svg>
-                                Android
-                            </a>
-                            <a href="https://apps.apple.com/ph/app/isudd-attendance/id6748982146" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                                </svg>
-                                iOS
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Universidad de Dagupan Website</h3>
-                        <p class="text-gray-600 mb-6">
-                            Official website of Universidad de Dagupan.
-                        </p>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="https://udd.edu.ph" target="_blank"
+                            <a href="https://udd-eventure.up.railway.app/events" target="_blank"
                                 class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -333,53 +225,23 @@
                                 Web
                             </a>
                         </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Queuing System</h3>
-                        <p class="text-gray-600">
-                            A digital system designed to manage and streamline student queues for academic and
-                            administrative services.
-                        </p>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">QR Code Contact Tracing</h3>
-                        <p class="text-gray-600">
-                            A responsive web-based contact tracing app using QR codes to log campus visits securely
-                            across all devices.
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section x-show="section === 'education'" x-transition class="min-h-screen flex items-center">
+        <section x-show="section === 'education'" x-transition class="min-h-screen py-20 bg-gray-200">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <h2 class="text-4xl font-bold text-gray-900 mb-12">Education</h2>
 
                 <div class="space-y-8">
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                    <div class="bg-gray-50 rounded-xl shadow-sm border border-gray-200 p-8">
                         <div class="flex items-start justify-between">
                             <div>
-                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Master in Information Technology</h3>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Bachelor of Science in Information Technology</h3>
                                 <p class="text-primary-500 font-medium mb-2">Universidad de Dagupan</p>
-                                <p class="text-gray-500">2022 – 2024</p>
-                            </div>
-                            <div class="text-4xl">🎓</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
-                        <div class="flex items-start justify-between">
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Bachelor of Science in Information
-                                    Technology</h3>
-                                <p class="text-primary-500 font-medium mb-2">Universidad de Dagupan</p>
-                                <p class="text-gray-500">2017 – 2021</p>
+                                <p class="text-gray-500">2022 – 2026</p>
                             </div>
                             <div class="text-4xl">🎓</div>
                         </div>
@@ -389,7 +251,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section x-show="section === 'contact'" x-transition class="min-h-screen flex items-center">
+        <section x-show="section === 'contact'" x-transition class="min-h-screen flex items-center bg-gray-200 py-12">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <h2 class="text-4xl font-bold text-gray-900 mb-8">Contact Me</h2>
                 <p class="text-xl text-gray-600 mb-12">
@@ -398,8 +260,8 @@
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-6">
-                    <a href="tel:09273600035"
-                        class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:border-primary-500 transition-colors">
+                    <a href="tel:09667167316"
+                        class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -410,13 +272,13 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">Mobile</h3>
-                                <p class="text-gray-600">09273600035</p>
+                                <p class="text-gray-600">09667167316</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="mailto:johnpaul.soriano.6197@gmail.com"
-                        class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:border-primary-500 transition-colors">
+                    <a href="mailto:madcute001gmail.com"
+                        class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -427,13 +289,13 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">Email</h3>
-                                <p class="text-gray-600 text-sm">johnpaul.soriano.6197@gmail.com</p>
+                                <p class="text-gray-600 text-sm">madcute001gmail.com</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://github.com/sorianojp" target="_blank"
-                        class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:border-primary-500 transition-colors">
+                    <a href="https://github.com/claveriajs" target="_blank"
+                        class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -443,32 +305,15 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">GitHub</h3>
-                                <p class="text-gray-600">sorianojp</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/sorianojp" target="_blank"
-                        class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:border-primary-500 transition-colors">
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-gray-900">LinkedIn</h3>
-                                <p class="text-gray-600">sorianojp</p>
+                                <p class="text-gray-600">claveriajs</p>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
-
-    </main>
-
+                </div>
+            </section>
 
 
 </body>
