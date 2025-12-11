@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adrian Fonacier | Portfolio</title>
+    <title>Angel Nicomedez | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,16 +12,16 @@
                 extend: {
                     colors: {
                         primary: {
-                            50: '#fdf2f8',
-                            100: '#fce7f3',
-                            200: '#fbcfe8',
-                            300: '#f9a8d4',
-                            400: '#f472b6',
-                            500: '#ec4899',
-                            600: '#db2777',
-                            700: '#be185d',
-                            800: '#9d174d',
-                            900: '#831843',
+                            50: '#f5edff',
+                            100: '#ead8ff',
+                            200: '#d4b5ff',
+                            300: '#bd91ff',
+                            400: '#a067f6',
+                            500: '#8340dd',
+                            600: '#652eae',
+                            700: '#47207e',
+                            800: '#2e1454',
+                            900: '#18092d',
                         }
                     }
                 }
@@ -38,11 +38,35 @@
             font-family: 'Inter', sans-serif;
         }
 
+        :root {
+            --purple-bg: #05000f;
+            --purple-panel: #120629;
+            --purple-panel-soft: #1c0b3b;
+            --purple-border: rgba(212, 181, 255, 0.25);
+            --purple-highlight: #cda6ff;
+            --purple-gradient: linear-gradient(135deg, #1b0634, #3c0a63 55%, #7b2edc);
+        }
+
+        body {
+            background: var(--purple-bg);
+            color: #f4edff;
+        }
+
         .gradient-text {
-            background: linear-gradient(90deg, #ec4899, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6);
+            background: linear-gradient(120deg, #f4edff, #b48bff, #6d2bd1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .section-surface {
+            background: radial-gradient(circle at top, rgba(125, 46, 220, 0.25), transparent 60%);
+            background-color: var(--purple-panel);
+        }
+
+        .panel {
+            background-color: var(--purple-panel-soft);
+            border: 1px solid var(--purple-border);
         }
 
         .card-hover {
@@ -51,7 +75,40 @@
 
         .card-hover:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 35px -10px rgba(123, 46, 220, 0.45), 0 10px 15px -5px rgba(8, 0, 16, 0.4);
+        }
+
+        .bg-gray-300,
+        .bg-gray-200 {
+            background-color: var(--purple-panel) !important;
+        }
+
+        .bg-gray-100,
+        .bg-gray-50,
+        .bg-white {
+            background-color: rgba(255, 255, 255, 0.04) !important;
+        }
+
+        .text-gray-900 {
+            color: #fef7ff !important;
+        }
+
+        .text-gray-700 {
+            color: #f1e3ff !important;
+        }
+
+        .text-gray-600 {
+            color: #d5c0ff !important;
+        }
+
+        .text-gray-500 {
+            color: #c3aaf7 !important;
+        }
+
+        .border-gray-300,
+        .border-gray-200,
+        .border-gray-100 {
+            border-color: var(--purple-border) !important;
         }
 
         ::-webkit-scrollbar {
@@ -63,7 +120,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
+            background: #5d2cae;
             border-radius: 10px;
         }
     </style>
@@ -72,11 +129,11 @@
 <body class="bg-gray-300 antialiased" x-data="{ section: 'home', mobileMenuOpen: false }">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-gradient-to-r from-pink-500 via-yellow-400 to-blue-500 text-white shadow-md z-50">
+    <nav class="fixed w-full bg-gradient-to-r from-primary-900 via-primary-700 to-primary-500 text-white shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-white">Adrian Fonacier</h1>
+                    <h1 class="text-xl font-bold text-white">Angel Nicomedez</h1>
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -100,7 +157,7 @@
 
                 <div class="hidden md:block">
                     <a href="files/Resume.pdf" target="_blank"
-                        class="bg-gradient-to-r from-pink-500 via-yellow-400 to-blue-500 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity">Resume</a>
+                        class="bg-gradient-to-r from-primary-700 via-primary-500 to-primary-400 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity">Resume</a>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -127,7 +184,7 @@
                 <button @click="section = 'contact'; mobileMenuOpen = false"
                     class="block w-full text-left py-2 text-gray-600 hover:text-primary-500">Contact</button>
                 <a href="files/Resume.pdf" target="_blank"
-                    class="block bg-white text-primary-600 px-6 py-2 rounded-lg text-center font-medium hover:bg-primary-50 transition-colors">Resume</a>
+                    class="block bg-gradient-to-r from-primary-700 via-primary-500 to-primary-400 text-white px-6 py-2 rounded-lg text-center font-medium hover:opacity-90 transition-opacity">Resume</a>
             </div>
         </div>
     </nav>
@@ -139,24 +196,24 @@
         <section x-show="section === 'home'" x-transition class="h-screen flex bg-gray-200">
             <div class="w-full md:w-1/2 flex items-center px-4 sm:px-6 lg:px-16">
                 <div class="max-w-2xl">
-                    <p class="text-xl md:text-2xl text-primary-500 font-semibold mb-4">Hello, I'm</p>
-                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Adrian Fonacier</h1>
-                    <p class="text-2xl text-gray-600 mb-6">Information Technology Student & Emerging Developer</p>
+                    <p class="text-xl md:text-2xl text-primary-500 font-semibold mb-4">Hi, I'm</p>
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Angel Nicomedez</h1>
+                    <p class="text-2xl text-gray-600 mb-6">IT Undergraduate & Aspiring Full-Stack Developer</p>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        An eager IT student who enjoys exploring technology, creating web applications, and understanding how systems operate behind the scenes.
+                        I’m a curious technologist who loves crafting intentional web experiences, experimenting with new tools, and understanding how every layer of a system works together.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <button @click="section = 'projects'"
-                            class="bg-gradient-to-r from-pink-500 via-yellow-400 to-blue-500 text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity">View
-                            Projects</button>
+                            class="bg-gradient-to-r from-primary-700 via-primary-500 to-primary-400 text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity">Browse
+                            Work</button>
                         <button @click="section = 'contact'"
-                            class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:border-primary-500 hover:text-primary-500 transition-colors">Contact
-                            Me</button>
+                            class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:border-primary-500 hover:text-primary-500 transition-colors">Send
+                            a Note</button>
                     </div>
                 </div>
             </div>
             <div class="hidden md:block md:w-1/2 h-full relative overflow-hidden">
-                <img src="images/photo.png" alt="Adrian Fonacier" class="absolute inset-0 w-full h-full object-cover">
+                <img src="images/photo.png" alt="Angel Nicomedez" class="absolute inset-0 w-full h-full object-cover">
             </div>
         </section>
 
@@ -166,31 +223,31 @@
                 <h2 class="text-4xl font-bold text-gray-900 mb-8">About Me</h2>
                 <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
                     <p>
-                        I'm an IT student who enjoys diving into <span class="font-semibold text-primary-500">technology, building practical web solutions, and figuring out how systems work behind the scenes</span>.
+                        I thrive on finding practical ways technology can simplify everyday routines and create delightful digital moments.
                     </p>
                     <p>
-                        At the moment, I'm exploring different paths in IT—like web development, tech support, and system administration—while sharpening my skills through academic work and personal projects.
+                        Right now, I'm experimenting with frontend frameworks, backend services, and light DevOps work while completing my IT coursework and self-driven studies.
                     </p>
                     <p>
-                        I love creating simple, user-friendly applications and steadily improving my frontend and backend skills. My goal is to keep learning, experimenting, and contributing to real-world projects that make a meaningful impact.
+                        My aim is to keep leveling up, collaborate with thoughtful teams, and pour that learning into tools that genuinely help people.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6 mt-12">
                     <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">💻</div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Development</h3>
-                        <p class="text-gray-600 text-sm">Developing my foundation in full-stack web and mobile development using modern tools and frameworks.</p>
+                        <h3 class="font-semibold text-gray-900 mb-2">Build & Prototype</h3>
+                        <p class="text-gray-600 text-sm">Sharpening my foundation in full-stack web and mobile development through focused practice and iterative projects.</p>
                     </div>
                     <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">📚</div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Education</h3>
-                        <p class="text-gray-600 text-sm">Expanding my IT knowledge through coursework, self-learning, and hands-on projects.</p>
+                        <h3 class="font-semibold text-gray-900 mb-2">Learning Journey</h3>
+                        <p class="text-gray-600 text-sm">Blending classroom lessons with tutorials and tinkering sessions to stay adaptable in the fast-moving tech space.</p>
                     </div>
                     <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">🛠️</div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Tech Support</h3>
-                        <p class="text-gray-600 text-sm">Building experience in troubleshooting, basic system maintenance, and helping others with technical issues.</p>
+                        <h3 class="font-semibold text-gray-900 mb-2">Support & Ops</h3>
+                        <p class="text-gray-600 text-sm">Gaining experience in troubleshooting, light system maintenance, and guiding classmates through technical snags.</p>
                     </div>
                 </div>
             </div>
@@ -201,31 +258,9 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-gray-900 mb-12">Projects</h2>
 
-                <div class="space-y-8">
-                    <div class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 card-hover">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-900 mb-2">UDD Eventure</h3>
-                                <p class="text-primary-500 text-sm font-medium">Event Management Platform</p>
-                            </div>
-                            <span
-                                class="bg-primary-100 text-primary-800 text-xs font-semibold px-3 py-1 rounded-full">Active</span>
-                        </div>
-                        <p class="text-gray-600 mb-6">
-                            An event management platform for organizing and managing university events.
-                        </p>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="https://udd-eventure.up.railway.app/events" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
-                                    </path>
-                                </svg>
-                                Web
-                            </a>
-                        </div>
-                    </div>
+                <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                    <p>I'm curating a refreshed lineup of case studies that spotlight thoughtful UI, lightweight backend logic, and reliable deployment workflows.</p>
+                    <p>Check back soon or reach out if you'd like an early walkthrough of the work in progress.</p>
                 </div>
             </div>
         </section>
@@ -239,9 +274,9 @@
                     <div class="bg-gray-50 rounded-xl shadow-sm border border-gray-200 p-8">
                         <div class="flex items-start justify-between">
                             <div>
-                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Bachelor of Science in Information Technology</h3>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">B.S. in Information Technology</h3>
                                 <p class="text-primary-500 font-medium mb-2">Universidad de Dagupan</p>
-                                <p class="text-gray-500">2022 – 2026</p>
+                                <p class="text-gray-500">Cohort 2022 – 2026</p>
                             </div>
                             <div class="text-4xl">🎓</div>
                         </div>
@@ -253,13 +288,13 @@
         <!-- Contact Section -->
         <section x-show="section === 'contact'" x-transition class="min-h-screen flex items-center bg-gray-200 py-12">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <h2 class="text-4xl font-bold text-gray-900 mb-8">Contact Me</h2>
+                <h2 class="text-4xl font-bold text-gray-900 mb-8">Connect With Me</h2>
                 <p class="text-xl text-gray-600 mb-12">
-                    I'm always open to new projects, collaborations, or opportunities where I can learn, grow, and contribute.
+                    I’m open to collaborations, mentorship, and any opportunity to build something thoughtful together.
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-6">
-                    <a href="tel:09723842834"
+                    <a href="javascript:void(0)"
                         class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
@@ -271,12 +306,12 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">Mobile</h3>
-                                <p class="text-gray-600">09723842834</p>
+                                <p class="text-gray-600">—</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="mailto:adrianfonacier14@gmail.com"
+                    <a href="mailto:angelnicomedez@gmail.com"
                         class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
@@ -288,12 +323,12 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">Email</h3>
-                                <p class="text-gray-600 text-sm">adrianfonacier14@gmail.com</p>
+                                <p class="text-gray-600 text-sm">angelnicomedez@gmail.com</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://github.com/rianfon" target="_blank"
+                    <a href="mailto:angelnicomedez@gmail.com"
                         class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
@@ -304,7 +339,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">GitHub</h3>
-                                <p class="text-gray-600">rianfon</p>
+                                <p class="text-gray-600 text-sm">angelnicomedez@gmail.com</p>
                             </div>
                         </div>
                     </a>
