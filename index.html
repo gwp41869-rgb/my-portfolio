@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jian Nuel S. Claveria | Portfolio</title>
+    <title>Adrian Fonacier | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,16 +12,16 @@
                 extend: {
                     colors: {
                         primary: {
-                            50: '#e6e6f5',
-                            100: '#b3b3e0',
-                            200: '#8080cc',
-                            300: '#4d4db8',
-                            400: '#2626a3',
-                            500: '#05056a',
-                            600: '#040460',
-                            700: '#030356',
-                            800: '#02024c',
-                            900: '#010142',
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
                         }
                     }
                 }
@@ -39,7 +39,7 @@
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #05056a 0%, #020242 100%);
+            background: linear-gradient(90deg, #ec4899, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -72,35 +72,35 @@
 <body class="bg-gray-300 antialiased" x-data="{ section: 'home', mobileMenuOpen: false }">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-blue-600 text-white shadow-md z-50">
+    <nav class="fixed w-full bg-gradient-to-r from-pink-500 via-yellow-400 to-blue-500 text-white shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-white">Jian Claveria</h1>
+                    <h1 class="text-xl font-bold text-white">Adrian Fonacier</h1>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
                     <button @click="section = 'home'"
-                        :class="section === 'home' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
+                        :class="section === 'home' ? 'text-white font-semibold' : 'text-primary-100 hover:text-white'"
                         class="transition-colors">Home</button>
                     <button @click="section = 'about'"
-                        :class="section === 'about' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
+                        :class="section === 'about' ? 'text-white font-semibold' : 'text-primary-100 hover:text-white'"
                         class="transition-colors">About</button>
                     <button @click="section = 'projects'"
-                        :class="section === 'projects' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
+                        :class="section === 'projects' ? 'text-white font-semibold' : 'text-primary-100 hover:text-white'"
                         class="transition-colors">Projects</button>
                     <button @click="section = 'education'"
-                        :class="section === 'education' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
+                        :class="section === 'education' ? 'text-white font-semibold' : 'text-primary-100 hover:text-white'"
                         class="transition-colors">Education</button>
                     <button @click="section = 'contact'"
-                        :class="section === 'contact' ? 'text-white font-semibold' : 'text-blue-100 hover:text-white'"
+                        :class="section === 'contact' ? 'text-white font-semibold' : 'text-primary-100 hover:text-white'"
                         class="transition-colors">Contact</button>
                 </div>
 
                 <div class="hidden md:block">
-                    <a href="files/Jian_Nuel_Claveria_Resume.pdf" target="_blank"
-                        class="bg-primary-500 text-white px-6 py-2 rounded-lg hover:bg-primary-600 transition-colors">Resume</a>
+                    <a href="files/Resume.pdf" target="_blank"
+                        class="bg-gradient-to-r from-pink-500 via-yellow-400 to-blue-500 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity">Resume</a>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -126,8 +126,8 @@
                     class="block w-full text-left py-2 text-gray-600 hover:text-primary-500">Education</button>
                 <button @click="section = 'contact'; mobileMenuOpen = false"
                     class="block w-full text-left py-2 text-gray-600 hover:text-primary-500">Contact</button>
-                <a href="files/Jian_Nuel_Claveria_Resume.pdf" target="_blank"
-                    class="block bg-white text-blue-600 px-6 py-2 rounded-lg text-center font-medium hover:bg-blue-50 transition-colors">Resume</a>
+                <a href="files/Resume.pdf" target="_blank"
+                    class="block bg-white text-primary-600 px-6 py-2 rounded-lg text-center font-medium hover:bg-primary-50 transition-colors">Resume</a>
             </div>
         </div>
     </nav>
@@ -140,14 +140,14 @@
             <div class="w-full md:w-1/2 flex items-center px-4 sm:px-6 lg:px-16">
                 <div class="max-w-2xl">
                     <p class="text-xl md:text-2xl text-primary-500 font-semibold mb-4">Hello, I'm</p>
-                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Jian Nuel S. Claveria</h1>
-                    <p class="text-2xl text-gray-600 mb-6">Student</p>
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Adrian Fonacier</h1>
+                    <p class="text-2xl text-gray-600 mb-6">Information Technology Student & Emerging Developer</p>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        A student passionate about technology, web development, and learning how systems work behind the scenes.
+                        An eager IT student who enjoys exploring technology, creating web applications, and understanding how systems operate behind the scenes.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <button @click="section = 'projects'"
-                            class="bg-primary-500 text-white px-8 py-3 rounded-lg hover:bg-primary-600 transition-colors">View
+                            class="bg-gradient-to-r from-pink-500 via-yellow-400 to-blue-500 text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity">View
                             Projects</button>
                         <button @click="section = 'contact'"
                             class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:border-primary-500 hover:text-primary-500 transition-colors">Contact
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="hidden md:block md:w-1/2 h-full relative overflow-hidden">
-                <img src="images/photo.png" alt="Jian Nuel S. Claveria" class="absolute inset-0 w-full h-full object-cover">
+                <img src="images/photo.png" alt="Adrian Fonacier" class="absolute inset-0 w-full h-full object-cover">
             </div>
         </section>
 
@@ -166,13 +166,13 @@
                 <h2 class="text-4xl font-bold text-gray-900 mb-8">About Me</h2>
                 <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
                     <p>
-                        I'm a student passionate about <span class="font-semibold text-primary-500">technology, web development, and learning how systems work behind the scenes</span>.
+                        I'm an IT student who enjoys diving into <span class="font-semibold text-primary-500">technology, building practical web solutions, and figuring out how systems work behind the scenes</span>.
                     </p>
                     <p>
-                        I'm currently exploring different areas of IT—such as web development, tech support, and system management—as I continue to build my skills and work on personal and academic projects.
+                        At the moment, I'm exploring different paths in IT—like web development, tech support, and system administration—while sharpening my skills through academic work and personal projects.
                     </p>
                     <p>
-                        I enjoy creating simple, user-friendly applications and improving my knowledge of both frontend and backend development. My goal is to keep growing, experimenting, and eventually contribute to real-world projects that make a meaningful impact.
+                        I love creating simple, user-friendly applications and steadily improving my frontend and backend skills. My goal is to keep learning, experimenting, and contributing to real-world projects that make a meaningful impact.
                     </p>
                 </div>
 
@@ -180,17 +180,17 @@
                     <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">💻</div>
                         <h3 class="font-semibold text-gray-900 mb-2">Development</h3>
-                        <p class="text-gray-600 text-sm">Learning full-stack web and mobile development using modern tools and frameworks</p>
+                        <p class="text-gray-600 text-sm">Developing my foundation in full-stack web and mobile development using modern tools and frameworks.</p>
                     </div>
                     <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">📚</div>
                         <h3 class="font-semibold text-gray-900 mb-2">Education</h3>
-                        <p class="text-gray-600 text-sm">Continuously studying and improving my IT skills through projects, research, and hands-on practice</p>
+                        <p class="text-gray-600 text-sm">Expanding my IT knowledge through coursework, self-learning, and hands-on projects.</p>
                     </div>
                     <div class="bg-gray-100 p-6 rounded-xl shadow-sm border border-gray-300 hover:shadow-md transition-shadow">
                         <div class="text-3xl mb-3">🛠️</div>
                         <h3 class="font-semibold text-gray-900 mb-2">Tech Support</h3>
-                        <p class="text-gray-600 text-sm">Gaining experience in troubleshooting, basic system maintenance, and helping others with technical issues</p>
+                        <p class="text-gray-600 text-sm">Building experience in troubleshooting, basic system maintenance, and helping others with technical issues.</p>
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                                 <p class="text-primary-500 text-sm font-medium">Event Management Platform</p>
                             </div>
                             <span
-                                class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Active</span>
+                                class="bg-primary-100 text-primary-800 text-xs font-semibold px-3 py-1 rounded-full">Active</span>
                         </div>
                         <p class="text-gray-600 mb-6">
                             An event management platform for organizing and managing university events.
@@ -255,12 +255,11 @@
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <h2 class="text-4xl font-bold text-gray-900 mb-8">Contact Me</h2>
                 <p class="text-xl text-gray-600 mb-12">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
-                    visions.
+                    I'm always open to new projects, collaborations, or opportunities where I can learn, grow, and contribute.
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-6">
-                    <a href="tel:09667167316"
+                    <a href="tel:09723842834"
                         class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
@@ -272,12 +271,12 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">Mobile</h3>
-                                <p class="text-gray-600">09667167316</p>
+                                <p class="text-gray-600">09723842834</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="mailto:madcute001gmail.com"
+                    <a href="mailto:adrianfonacier14@gmail.com"
                         class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
@@ -289,12 +288,12 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">Email</h3>
-                                <p class="text-gray-600 text-sm">madcute001gmail.com</p>
+                                <p class="text-gray-600 text-sm">adrianfonacier14@gmail.com</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://github.com/claveriajs" target="_blank"
+                    <a href="https://github.com/rianfon" target="_blank"
                         class="bg-gray-100 rounded-xl shadow-sm border border-gray-300 p-8 hover:border-primary-500 transition-colors">
                         <div class="flex items-center space-x-4">
                             <div class="bg-primary-50 text-primary-500 p-4 rounded-lg">
@@ -305,7 +304,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-900">GitHub</h3>
-                                <p class="text-gray-600">claveriajs</p>
+                                <p class="text-gray-600">rianfon</p>
                             </div>
                         </div>
                     </a>
