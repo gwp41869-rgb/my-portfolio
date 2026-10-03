@@ -146,28 +146,97 @@
             object-position: center 18%;
         }
 
+        /* Modern smooth-motion system */
+        [x-cloak] {
+            display: none !important;
+        }
+
         .card-hover {
-            transition: transform 0.25s ease,
-                        box-shadow 0.25s ease,
-                        border-color 0.25s ease;
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 0.45s ease,
+                        border-color 0.35s ease,
+                        background-color 0.35s ease;
+            will-change: transform;
         }
 
         .card-hover:hover {
-            transform: translateY(-4px);
-            border-color: rgba(83, 143, 255, 0.65);
-            box-shadow: 0 12px 30px rgba(22, 91, 202, 0.15);
+            transform: translateY(-7px);
+            border-color: rgba(83, 143, 255, 0.7);
+            box-shadow: 0 20px 45px rgba(22, 91, 202, 0.2);
         }
 
         .blue-button {
-            background: linear-gradient(135deg, #2463d5, #3985ff);
+            background: linear-gradient(135deg, #2463d5, #3985ff, #5595ff);
+            background-size: 200% 200%;
             color: white;
-            transition: opacity 0.2s ease,
-                        transform 0.2s ease;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 0.35s ease,
+                        opacity 0.3s ease,
+                        background-position 0.5s ease;
+            will-change: transform;
         }
 
         .blue-button:hover {
-            opacity: 0.9;
+            opacity: 1;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(57, 133, 255, 0.28);
+            background-position: 100% 50%;
+        }
+
+        .portrait {
+            transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+            will-change: transform;
+        }
+
+        .portrait:hover {
+            transform: scale(1.025);
+            filter: saturate(1.05) contrast(1.02);
+        }
+
+        nav button, nav a {
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        nav button:hover, nav a:hover {
             transform: translateY(-1px);
+        }
+
+        .nav-active {
+            color: #8ebaff !important;
+            background: rgba(57, 133, 255, 0.1);
+            box-shadow: inset 0 0 0 1px rgba(57, 133, 255, 0.12);
+        }
+
+        .hero-bg {
+            background-size: 140% 140%;
+            animation: ambientGradient 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes ambientGradient {
+            from { background-position: 0% 50%; }
+            to { background-position: 100% 50%; }
+        }
+
+        .section-shell {
+            will-change: transform, opacity, filter;
+        }
+
+        .reveal-content {
+            animation: contentReveal 0.85s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .reveal-image {
+            animation: imageReveal 1s 0.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes contentReveal {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes imageReveal {
+            from { opacity: 0; transform: translateX(28px) scale(0.975); }
+            to { opacity: 1; transform: translateX(0) scale(1); }
         }
 
         section {
@@ -212,6 +281,8 @@
             *,
             *::before,
             *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
         }
@@ -219,6 +290,7 @@
 </head>
 
 <body
+    x-cloak
     class="antialiased"
     x-data="{ section: 'home', mobileMenuOpen: false }"
 >
@@ -240,27 +312,32 @@
                 <div class="hidden md:flex items-center gap-7 text-sm">
                     <button
                         @click="section = 'home'"
-                        class="hover:text-blue-400 transition-colors"
+                        :class="section === 'home' ? 'nav-active' : ''"
+                        class="px-3 py-2 rounded-lg hover:text-blue-300"
                     >Home</button>
 
                     <button
                         @click="section = 'about'"
-                        class="hover:text-blue-400 transition-colors"
+                        :class="section === 'about' ? 'nav-active' : ''"
+                        class="px-3 py-2 rounded-lg hover:text-blue-300"
                     >About</button>
 
                     <button
                         @click="section = 'skills'"
-                        class="hover:text-blue-400 transition-colors"
+                        :class="section === 'skills' ? 'nav-active' : ''"
+                        class="px-3 py-2 rounded-lg hover:text-blue-300"
                     >Skills</button>
 
                     <button
                         @click="section = 'education'"
-                        class="hover:text-blue-400 transition-colors"
+                        :class="section === 'education' ? 'nav-active' : ''"
+                        class="px-3 py-2 rounded-lg hover:text-blue-300"
                     >Education</button>
 
                     <button
                         @click="section = 'contact'"
-                        class="hover:text-blue-400 transition-colors"
+                        :class="section === 'contact' ? 'nav-active' : ''"
+                        class="px-3 py-2 rounded-lg hover:text-blue-300"
                     >Contact</button>
                 </div>
 
@@ -286,7 +363,12 @@
         <!-- Mobile Navigation -->
         <div
             x-show="mobileMenuOpen"
-            x-transition
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-3"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-3"
             class="md:hidden bg-[#0a1b36] border-t border-blue-400/20"
         >
             <div class="px-5 py-4 space-y-4 flex flex-col">
@@ -331,11 +413,16 @@
         <section
             id="home"
             x-show="section === 'home'"
-            x-transition
-            class="hero-bg min-h-[calc(100vh-4rem)] flex flex-col md:flex-row items-center overflow-hidden"
+            x-transition:enter="transition ease-[cubic-bezier(0.22,1,0.36,1)] duration-700"
+            x-transition:enter-start="opacity-0 translate-y-5 scale-[0.985] blur-[8px]"
+            x-transition:enter-end="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave="transition ease-in-out duration-350"
+            x-transition:leave-start="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave-end="opacity-0 -translate-y-3 scale-[0.99] blur-[5px]"
+            class="section-shell hero-bg min-h-[calc(100vh-4rem)] flex flex-col md:flex-row items-center overflow-hidden"
         >
             <!-- Introduction -->
-            <div class="w-full md:w-1/2 px-6 sm:px-10 lg:px-16 py-12 md:py-20 order-2 md:order-1">
+            <div class="w-full md:w-1/2 px-6 sm:px-10 lg:px-16 py-12 md:py-20 order-2 md:order-1 reveal-content">
                 
 
                 <p class="text-xl md:text-2xl text-blue-300 font-semibold mb-2">
@@ -381,7 +468,7 @@
             </div>
 
             <!-- Portrait Picture -->
-            <div class="w-full md:w-1/2 h-[360px] sm:h-[480px] md:h-[calc(100vh-4rem)] max-h-[850px] order-1 md:order-2 px-8 sm:px-12 md:px-0 pt-8 md:pt-0">
+            <div class="w-full md:w-1/2 h-[360px] reveal-image sm:h-[480px] md:h-[calc(100vh-4rem)] max-h-[850px] order-1 md:order-2 px-8 sm:px-12 md:px-0 pt-8 md:pt-0">
                 <div class="w-full h-full overflow-hidden rounded-2xl md:rounded-none md:rounded-l-3xl border border-blue-400/20 md:border-0">
                     <img
                         src="images/80fe62c4-5f27-4572-9c2d-fe15d0dce645.png"
@@ -397,10 +484,15 @@
         <section
             id="about"
             x-show="section === 'about'"
-            x-transition
-            class="section-bg min-h-screen py-20 px-5"
+            x-transition:enter="transition ease-[cubic-bezier(0.22,1,0.36,1)] duration-650"
+            x-transition:enter-start="opacity-0 translate-y-6 scale-[0.985] blur-[8px]"
+            x-transition:enter-end="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave="transition ease-in-out duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave-end="opacity-0 -translate-y-3 scale-[0.99] blur-[5px]"
+            class="section-shell section-bg min-h-screen py-20 px-5"
         >
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-5xl mx-auto reveal-content">
 
                 <div class="mb-10">
                     <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-2">
@@ -478,10 +570,15 @@
         <section
             id="skills"
             x-show="section === 'skills'"
-            x-transition
-            class="section-bg min-h-screen py-20 px-5"
+            x-transition:enter="transition ease-[cubic-bezier(0.22,1,0.36,1)] duration-650"
+            x-transition:enter-start="opacity-0 translate-y-6 scale-[0.985] blur-[8px]"
+            x-transition:enter-end="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave="transition ease-in-out duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave-end="opacity-0 -translate-y-3 scale-[0.99] blur-[5px]"
+            class="section-shell section-bg min-h-screen py-20 px-5"
         >
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-5xl mx-auto reveal-content">
 
                 <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-2">
                     My capabilities
@@ -529,10 +626,15 @@
         <section
             id="education"
             x-show="section === 'education'"
-            x-transition
-            class="section-bg min-h-screen py-20 px-5"
+            x-transition:enter="transition ease-[cubic-bezier(0.22,1,0.36,1)] duration-650"
+            x-transition:enter-start="opacity-0 translate-y-6 scale-[0.985] blur-[8px]"
+            x-transition:enter-end="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave="transition ease-in-out duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave-end="opacity-0 -translate-y-3 scale-[0.99] blur-[5px]"
+            class="section-shell section-bg min-h-screen py-20 px-5"
         >
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-5xl mx-auto reveal-content">
 
                 <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-2">
                     Academic background
@@ -576,10 +678,15 @@
         <section
             id="contact"
             x-show="section === 'contact'"
-            x-transition
-            class="section-bg min-h-screen flex items-center py-20 px-5"
+            x-transition:enter="transition ease-[cubic-bezier(0.22,1,0.36,1)] duration-650"
+            x-transition:enter-start="opacity-0 translate-y-6 scale-[0.985] blur-[8px]"
+            x-transition:enter-end="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave="transition ease-in-out duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0 scale-100 blur-0"
+            x-transition:leave-end="opacity-0 -translate-y-3 scale-[0.99] blur-[5px]"
+            class="section-shell section-bg min-h-screen flex items-center py-20 px-5"
         >
-            <div class="max-w-4xl mx-auto w-full">
+            <div class="max-w-4xl mx-auto w-full reveal-content">
 
                 <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-2">
                     Let's connect
